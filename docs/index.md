@@ -9,7 +9,7 @@ hide:
 
 **Data360 Chat** is the **World Bank reference customization**: it ships pre-configured for the **[Data360 MCP Server](https://github.com/worldbank/data360-mcp)** and World Bank development indicators—the setup this documentation describes. Other teams can reuse the same app with a different MCP server via **`MCP_SERVER_URL`**.
 
-> *Maintained by the World Bank **AI for Data — Data for AI** team. On Data360 Chat, live indicators and metadata flow through Data360 MCP; PCN helps readers tell verified statistics from model guesses at a glance.*
+> _Maintained by the World Bank **AI for Data — Data for AI** team. On Data360 Chat, live indicators and metadata flow through Data360 MCP; PCN helps readers tell verified statistics from model guesses at a glance._
 
 <!-- Screenshot: add docs/img/chat-preview.png when an image is available. -->
 
@@ -37,12 +37,12 @@ hide:
 
 ## Highlights at a glance
 
-| | |
-|:---|:---|
-| **Streaming answers** | Replies appear as they are generated; long answers can be **paused**, **resumed**, and (where enabled) you can follow extended **reasoning** steps. |
-| **Rich messages** | **Markdown**, **math (KaTeX)**, **code highlighting**, and **image attachments** (where allowed). |
-| **History & feedback** | Past chats, **vote** on answers, and **feedback** so teams can improve the experience. |
-| **Multiple AI providers** | Powered by **LiteLLM**—Azure OpenAI, OpenAI, Anthropic, Google, and more, depending on your setup. |
+|                           |                                                                                                                                                     |
+| :------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Streaming answers**     | Replies appear as they are generated; long answers can be **paused**, **resumed**, and (where enabled) you can follow extended **reasoning** steps. |
+| **Rich messages**         | **Markdown**, **math (KaTeX)**, **code highlighting**, and **image attachments** (where allowed).                                                   |
+| **History & feedback**    | Past chats, **vote** on answers, and **feedback** so teams can improve the experience.                                                              |
+| **Multiple AI providers** | Powered by **LiteLLM**—Azure OpenAI, OpenAI, Anthropic, Google, and more, depending on your setup.                                                  |
 
 ---
 
@@ -52,53 +52,53 @@ hide:
 
     **Start here**
 
-    - [**Getting started**](user-guide/getting-started.md) — Sign in (or try as guest) and send your first question  
-    - [**Chat features**](user-guide/chat-features.md) — Streaming, stop, regenerate, thinking display  
-    - [**Data analysis**](user-guide/data-analysis.md) — Indicators, charts, and exploring development data  
-    - [**Documents & spreadsheets**](user-guide/documents-spreadsheets.md) — Artifacts next to the conversation  
-    - [**File attachments**](user-guide/file-attachments.md) — Images and limits  
-    - [**FAQ**](user-guide/faq.md) — Common questions  
+    - [**Getting started**](user-guide/getting-started.md) — Sign in (or try as guest) and send your first question
+    - [**Chat features**](user-guide/chat-features.md) — Streaming, stop, regenerate, thinking display
+    - [**Data analysis**](user-guide/data-analysis.md) — Indicators, charts, and exploring development data
+    - [**Documents & spreadsheets**](user-guide/documents-spreadsheets.md) — Artifacts next to the conversation
+    - [**File attachments**](user-guide/file-attachments.md) — Images and limits
+    - [**FAQ**](user-guide/faq.md) — Common questions
 
 === "I’m building or extending it"
 
-    - [**Architecture hub**](architecture/index.md) — how the docs are organized  
-    - [**Architecture overview**](architecture/overview.md) — scope and stack  
-    - [**System context**](architecture/system-context.md) — actors and external systems  
-    - [**Backend**](architecture/backend.md) · [**Frontend**](architecture/frontend.md)  
-    - [**Authentication**](architecture/authentication.md) — modes and flows  
-    - [**Integrations**](architecture/integrations.md) — MCP, Data360, and related systems  
-    - [**Infrastructure**](infrastructure/index.md) — components and data flow  
-    - [**Local development**](deployment/local-development.md) — run the app locally  
-    - [**Development**](https://github.com/avsolatorio/vercel-ai-chatbot/blob/main/README.md#development) — tests and tooling (README)  
-    - [**DEVELOPER.md**](https://github.com/avsolatorio/vercel-ai-chatbot/blob/main/DEVELOPER.md) — contributor notes  
+    - [**Architecture hub**](architecture/index.md) — how the docs are organized
+    - [**Architecture overview**](architecture/overview.md) — scope and stack
+    - [**System context**](architecture/system-context.md) — actors and external systems
+    - [**Backend**](architecture/backend.md) · [**Frontend**](architecture/frontend.md)
+    - [**Authentication**](architecture/authentication.md) — modes and flows
+    - [**Integrations**](architecture/integrations.md) — MCP, Data360, and related systems
+    - [**Infrastructure**](infrastructure/index.md) — components and data flow
+    - [**Local development**](deployment/local-development.md) — run the app locally
+    - [**Development**](https://github.com/avsolatorio/data-ai-chatbot/blob/main/README.md#development) — tests and tooling (README)
+    - [**DEVELOPER.md**](https://github.com/avsolatorio/data-ai-chatbot/blob/main/DEVELOPER.md) — contributor notes
 
 === "I’m deploying or operating it"
 
-    - [**Deployment hub**](deployment/index.md) — deployment documentation index  
-    - [**Docker setup (detailed)**](docker-setup.md) — compose-oriented walkthrough  
-    - [**Docker**](deployment/docker.md) — Docker Compose for development  
-    - [**Production**](deployment/production.md) — hosting and operations concerns  
-    - [**Environment variables**](operations/environment-variables.md) — full reference  
-    - [**Troubleshooting**](operations/troubleshooting.md) — common issues  
-    - [**Runbooks**](operations/runbooks.md) — operational procedures  
-    - [**README — quick start**](https://github.com/avsolatorio/vercel-ai-chatbot/blob/main/README.md#getting-started) — high-level clone-and-run path  
+    - [**Deployment hub**](deployment/index.md) — deployment documentation index
+    - [**Docker setup (detailed)**](docker-setup.md) — compose-oriented walkthrough
+    - [**Docker**](deployment/docker.md) — Docker Compose for development
+    - [**Production**](deployment/production.md) — hosting and operations concerns
+    - [**Environment variables**](operations/environment-variables.md) — full reference
+    - [**Troubleshooting**](operations/troubleshooting.md) — common issues
+    - [**Runbooks**](operations/runbooks.md) — operational procedures
+    - [**README — quick start**](https://github.com/avsolatorio/data-ai-chatbot/blob/main/README.md#getting-started) — high-level clone-and-run path
 
 === "I’m administering it"
 
-    - [**Admin guide**](admin-guide/index.md) — feedback, maintenance, users  
-    - [**Authentication (architecture)**](architecture/authentication.md) — sign-in modes and flows  
-    - [**Feedback review**](admin-guide/feedback-review.md)  
-    - [**Maintenance mode**](admin-guide/maintenance-mode.md)  
-    - [**User management**](admin-guide/user-management.md)  
+    - [**Admin guide**](admin-guide/index.md) — feedback, maintenance, users
+    - [**Authentication (architecture)**](architecture/authentication.md) — sign-in modes and flows
+    - [**Feedback review**](admin-guide/feedback-review.md)
+    - [**Maintenance mode**](admin-guide/maintenance-mode.md)
+    - [**User management**](admin-guide/user-management.md)
 
 ---
 
 ## Security & API
 
-- [**Security hub**](security/index.md) — security documentation index  
-- [**Security overview**](security/overview.md) — auth, cookies, CSRF, rate limiting  
-- [**Risk assessment**](security/risk-assessment.md) — high-level security themes and practices  
-- **Live API docs** (when the backend is running): Swagger at `{BACKEND_URL}/docs` and ReDoc at `{BACKEND_URL}/redoc` — see [**API**](api/index.md)  
+- [**Security hub**](security/index.md) — security documentation index
+- [**Security overview**](security/overview.md) — auth, cookies, CSRF, rate limiting
+- [**Risk assessment**](security/risk-assessment.md) — high-level security themes and practices
+- **Live API docs** (when the backend is running): Swagger at `{BACKEND_URL}/docs` and ReDoc at `{BACKEND_URL}/redoc` — see [**API**](api/index.md)
 
 ---
 

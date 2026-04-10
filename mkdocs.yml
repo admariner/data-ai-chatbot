@@ -2,8 +2,9 @@ site_name: Data AI Chatbot documentation
 site_description: >-
   Data AI Chatbot — a self-hostable data chatbot powered by MCP, with optional Proof-Carrying Numbers.
   These docs focus on Data360 Chat, the World Bank reference configuration (Data360 MCP).
-site_url: https://avsolatorio.github.io/vercel-ai-chatbot/
-repo_url: https://github.com/avsolatorio/vercel-ai-chatbot
+# Must match the GitHub Pages URL (repo name = first path segment for project pages).
+site_url: https://avsolatorio.github.io/data-ai-chatbot/
+repo_url: https://github.com/avsolatorio/data-ai-chatbot
 edit_uri: edit/main/docs/
 
 # Draft / internal Markdown in docs/ that should not be published (avoids link-check noise).
