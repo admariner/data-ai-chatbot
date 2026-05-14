@@ -5,7 +5,7 @@ import {
   type Node as ProsemirrorNode,
   Schema,
 } from "prosemirror-model";
-import { schema } from "prosemirror-schema-basic";
+import { marks as basicMarkSpecs, schema } from "prosemirror-schema-basic";
 import { addListNodes } from "prosemirror-schema-list";
 import { EditorState } from "prosemirror-state";
 import { EditorView } from "prosemirror-view";
@@ -18,7 +18,7 @@ import { DiffType, diffEditor } from "@/lib/editor/diff";
 const diffSchema = new Schema({
   nodes: addListNodes(schema.spec.nodes, "paragraph block*", "block"),
   marks: OrderedMap.from({
-    ...schema.spec.marks.toObject(),
+    ...basicMarkSpecs,
     diffMark: {
       attrs: { type: { default: "" } },
       toDOM(mark) {

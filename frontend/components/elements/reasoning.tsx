@@ -48,6 +48,11 @@ export type ReasoningProps = ComponentProps<typeof Collapsible> & {
   defaultOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
   duration?: number;
+  /**
+   * When true (default), panel auto-collapses shortly after streaming ends if it was
+   * opened via `defaultOpen`. Set false to keep the panel open until the user toggles it.
+   */
+  autoCollapseAfterStreamEnd?: boolean;
 };
 
 const AUTO_CLOSE_DELAY = 500;
@@ -61,6 +66,7 @@ export const Reasoning = memo(
     defaultOpen = true,
     onOpenChange,
     duration: durationProp,
+    autoCollapseAfterStreamEnd = true,
     children,
     ...props
   }: ReasoningProps) => {
@@ -92,8 +98,11 @@ export const Reasoning = memo(
       }
     }, [isStreaming, setDuration]);
 
-    // Auto-open when streaming starts, auto-close when streaming ends (once only)
+    // Optional: after streaming ends, collapse once (legacy UX for some call sites)
     useEffect(() => {
+      if (!autoCollapseAfterStreamEnd) {
+        return;
+      }
       if (defaultOpen && !isStreaming && isOpen && !hasAutoClosedRef) {
         // Add a small delay before closing to allow user to see the content
         const timer = setTimeout(() => {
@@ -103,7 +112,14 @@ export const Reasoning = memo(
 
         return () => clearTimeout(timer);
       }
-    }, [isStreaming, isOpen, defaultOpen, setIsOpen, hasAutoClosedRef]);
+    }, [
+      isStreaming,
+      isOpen,
+      defaultOpen,
+      setIsOpen,
+      hasAutoClosedRef,
+      autoCollapseAfterStreamEnd,
+    ]);
 
     const handleOpenChange = (newOpen: boolean) => {
       setIsOpen(newOpen);

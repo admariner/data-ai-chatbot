@@ -1,6 +1,6 @@
 import { textblockTypeInputRule } from "prosemirror-inputrules";
 import { Schema } from "prosemirror-model";
-import { schema } from "prosemirror-schema-basic";
+import { marks as basicMarkSpecs, schema } from "prosemirror-schema-basic";
 import { addListNodes } from "prosemirror-schema-list";
 import type { Transaction } from "prosemirror-state";
 import type { EditorView } from "prosemirror-view";
@@ -10,7 +10,9 @@ import { buildContentFromDocument } from "./functions";
 
 export const documentSchema = new Schema({
   nodes: addListNodes(schema.spec.nodes, "paragraph block*", "block"),
-  marks: schema.spec.marks,
+  // Use package `marks` export — avoids destructuring `schema.spec.marks` when `spec`
+  // is missing in some bundle/edge cases (runtime: "Cannot destructure property 'marks'…").
+  marks: basicMarkSpecs,
 });
 
 export function headingRule(level: number) {

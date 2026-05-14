@@ -183,9 +183,19 @@ export function MessageThinking({
   renderPart,
 }: MessageThinkingProps) {
   const [sheetOpen, setSheetOpen] = useState(false);
+  /** Open while the assistant response is streaming; closed when done (history / completed). */
+  const [thinkingPanelOpen, setThinkingPanelOpen] = useState(isLoading);
   const scrollContainerRef = useRef<HTMLElement>(null);
   const contentContainerRef = useRef<HTMLDivElement>(null);
   const isFollowingRef = useRef(true);
+
+  useEffect(() => {
+    if (isLoading) {
+      setThinkingPanelOpen(true);
+    } else {
+      setThinkingPanelOpen(false);
+    }
+  }, [isLoading]);
 
   const scrollToBottom = useCallback(() => {
     const el = scrollContainerRef.current;
@@ -225,10 +235,6 @@ export function MessageThinking({
     return null;
   }
 
-  // Default to collapsed so the panel doesn't overwhelm the UX on render
-  // completion or when a past conversation is loaded. Users can expand manually.
-  const shouldDefaultOpen = false;
-
   // Only show step dots for parts that actually render (exclude step-start, text-start, etc.)
   const renderableParts = thinkingParts.filter(
     (p) => !isNonRenderableStreamEvent(p.data),
@@ -241,8 +247,10 @@ export function MessageThinking({
     <div className="ml-0 md:ml-0 mb-5" data-testid="message-thinking-wrapper">
       <Reasoning
         data-testid="message-thinking"
-        defaultOpen={shouldDefaultOpen}
+        autoCollapseAfterStreamEnd={false}
         isStreaming={isLoading}
+        onOpenChange={setThinkingPanelOpen}
+        open={thinkingPanelOpen}
       >
         <div className="flex w-full items-center gap-2">
           <ReasoningTrigger />
