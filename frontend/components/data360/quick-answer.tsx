@@ -184,7 +184,7 @@ function SingleFactCardRenderer({
       </p>
       <div className="font-normal leading-none tracking-tight text-4xl mb-5 text-foreground">
         {card.claim_id ? (
-          <ClaimMark policy={{ type: "rounded", decimals: 2 }} id={card.claim_id}>
+          <ClaimMark policy={{ type: "auto" }} id={card.claim_id}>
             {fmt(card.value)}
           </ClaimMark>
         ) : (
@@ -280,7 +280,7 @@ function ComparisonCardRenderer({
             )}>
               {entry.claim_id ? (
                 <>
-                  <ClaimMark policy={{ type: "rounded", decimals: 2 }} id={entry.claim_id}>
+                  <ClaimMark policy={{ type: "auto" }} id={entry.claim_id}>
                     {typeof entry.value === "number"
                       ? entry.value.toLocaleString(undefined, { maximumFractionDigits: 2 })
                       : fmt(entry.value)}
@@ -314,7 +314,7 @@ function TrendGroupRow({ group, unit }: { group: TrendGroupEntry; unit: string }
       <div className="flex items-baseline gap-2 mt-0.5">
         <span className="text-2xl font-bold tracking-tight">
           {group.latest_claim_id ? (
-            <ClaimMark policy={{ type: "rounded", decimals: 2 }} id={group.latest_claim_id}>
+            <ClaimMark policy={{ type: "auto" }} id={group.latest_claim_id}>
               {fmt(group.latest_value)}
             </ClaimMark>
           ) : (
@@ -327,7 +327,7 @@ function TrendGroupRow({ group, unit }: { group: TrendGroupEntry; unit: string }
         <p className="text-xs text-muted-foreground">
           From{" "}
           {group.earliest_claim_id ? (
-            <ClaimMark policy={{ type: "rounded", decimals: 2 }} id={group.earliest_claim_id}>
+            <ClaimMark policy={{ type: "auto" }} id={group.earliest_claim_id}>
               {fmt(group.earliest_value)}
             </ClaimMark>
           ) : (
@@ -438,7 +438,7 @@ function TrendCardRenderer({
         <p className="mt-2 text-sm text-muted-foreground">
           From{" "}
           {card.earliest_claim_id ? (
-            <ClaimMark policy={{ type: "rounded", decimals: 2 }} id={card.earliest_claim_id}>
+            <ClaimMark policy={{ type: "auto" }} id={card.earliest_claim_id}>
               {fmt(card.earliest_value)}
             </ClaimMark>
           ) : (
@@ -446,7 +446,7 @@ function TrendCardRenderer({
           )}{card.unit ? ` ${card.unit}` : ""}{" "}
           ({card.earliest_year}) to{" "}
           {card.latest_claim_id ? (
-            <ClaimMark policy={{ type: "rounded", decimals: 2 }} id={card.latest_claim_id}>
+            <ClaimMark policy={{ type: "auto" }} id={card.latest_claim_id}>
               {fmt(card.latest_value)}
             </ClaimMark>
           ) : (
